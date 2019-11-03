@@ -260,29 +260,18 @@ The goals / steps of this project are the following:
 
 ---
 
-### Reflection
+### Shortcomings
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+A few of the showtcomings are:
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
-
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-![alt text][image1]
+* The algorithm for detecting straight lines, Hough Transform, doesn't work really well for curves roads.
+* We are asumming in the region of interest that the camera stays in the same place and that lanes are flat. That is not the case in the real world.
+* In roads where there are signs with words, such as "just left", the algorithm might struggle.
+* If high congestion traffic the algorithm might have problems to see the lanes in fron the car.
 
 
-### 2. Identify potential shortcomings with your current pipeline
+### Suggested Improvements
 
+* Used a higher degree shape that can work in curves (non-linear)
+* Lines aren't really smooth in the video. A suggestion migh be to use the results from previous frames to smoother the output.
 
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
-
-### 3. Suggest possible improvements to your pipeline
-
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
