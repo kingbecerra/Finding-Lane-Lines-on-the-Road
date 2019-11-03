@@ -11,7 +11,7 @@ My main pipeline consisted of six steps which are demostrated in the section "Te
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[image1]: ./test_images/solidWhiteRight.jpg
 
 ### Step 1. Read in the image
 
@@ -22,7 +22,7 @@ image = mpimg.imread('test_images/solidWhiteRight.jpg')
 plt.imshow(image)
 ```
 
-
+![alt text][image1]
 
 ### Step 2. Grayscale the image
 
