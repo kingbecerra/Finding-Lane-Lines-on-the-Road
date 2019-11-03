@@ -16,7 +16,7 @@ My main pipeline consisted of six steps which are demostrated in the section "Te
 [image5]: ./test_algorithm/hough_transform.png
 [image6]: ./test_algorithm/original_with_lanes.png
 
----
+
 ## Testing Algorithm Step by Step
 
 
@@ -111,7 +111,7 @@ If you'd like to include images to show how the pipeline works, here is how to i
 
 ![alt text][image1]
 
----
+## Applying the Solution to all Images
 
 ## Writeup Template
 
