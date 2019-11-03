@@ -13,15 +13,15 @@ My main pipeline consisted of six steps:
 
 Content of step 1
 
-## Step 2. Grayscale the image
+### Step 2. Grayscale the image
 
-## Step 3. Gaussian Smoothing and Canny Edge Detection
+### Step 3. Gaussian Smoothing and Canny Edge Detection
 
-## Step 4. Find Vertices
+### Step 4. Find Vertices
 
-## Step 5. Hough Transform
+### Step 5. Hough Transform
 
-## Step. 6 Original image with lane lines
+### Step. 6 Original image with lane lines
 
 My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
 
