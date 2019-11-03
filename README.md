@@ -17,9 +17,9 @@ My main pipeline consisted of six steps which are demostrated in the section "Te
 [image6]: ./test_algorithm/original_with_lanes.png
 
 ---
-## Testing the Algorithm
+## Testing Algorithm Step by Step
 
----
+
 ### Step 1. Read in the image
 We used image ```test_images/solidWhiteRight.jpg``` for testing purposes.
 
@@ -110,6 +110,8 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 If you'd like to include images to show how the pipeline works, here is how to include an image: 
 
 ![alt text][image1]
+
+---
 
 ## Writeup Template
 
