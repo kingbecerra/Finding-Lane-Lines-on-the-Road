@@ -29,7 +29,7 @@ plt.imshow(image)
 ![alt text][image1]
 
 ### Step 2. Grayscale the image
-Convert the image to grayscale before applying a Gaussian blut and Cannt Edge Detection
+Convert the image to grayscale before applying a Gaussian blut and Cannt Edge Detection.
 
 ```
 gray = grayscale(image)
@@ -39,32 +39,66 @@ plt.imshow(gray, cmap='gray')
 ![alt text][image2]
 
 ### Step 3. Gaussian Smoothing and Canny Edge Detection
+A kernel of size 5 was ussed for the Gaussian blur. For the Canny Edge Detection algorithm 50 y 150 were used for low and high threshold parameters.
 
 ```
+# Gaussian smoothing with a defined kernel size
+kernel_size = 5
+blur_gray = gaussian_blur(gray, kernel_size)
 
+# Canny Edge Detection Alghorithm
+low_threshold = 50
+high_threshold = 150
+edges = canny(blur_gray, low_threshold,high_threshold)
+plt.imshow(edges, cmap='Greys_r')
 ```
 
 ![alt text][image3]
 
 ### Step 4. Find Vertices
+A quadrilatera shape was used to find the vertices and isolate the region of interest.
 
 ```
+imshape = image.shape
+vertices = np.array([[(0,imshape[0]),(450, 320), (490, 320), (imshape[1],imshape[0])]], dtype=np.int32)
+masked_edges = region_of_interest(edges, vertices)
+plt.imshow(masked_edges, cmap='Greys_r')
 
 ```
 
 ![alt text][image4]
 
 ### Step 5. Hough Transform
+******************* TDB
 
 ```
+# Hough transform parameters
+rho = 2 
+theta = np.pi/180 
+threshold = 30    
+min_line_len = 15 
+max_line_gap = 20 
+
+# Find lines
+line_image = hough_lines(masked_edges, rho, theta, threshold, min_line_len, max_line_gap)
+
+# Create a "color" binary image to combine with line image
+color_edges = np.dstack((edges, edges, edges)) 
+
+# Draw the lines on the edge image
+lines_edges = cv2.addWeighted(color_edges, 0.8, line_image, 1, 0) 
+plt.imshow(lines_edges)
 
 ```
 
 ![alt text][image5]
 
 ### Step. 6 Original image with lane lines
+The lanes lines are sumperimposed over the original image.
 
 ```
+lines_edges = weighted_img(line_image, image, 0.6)
+plt.imshow(lines_edges)
 
 ```
 
