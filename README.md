@@ -24,8 +24,8 @@ My main pipeline consisted of six steps which are demostrated in the section "Te
 [image12]: ./test_images_output/whiteCarLaneSwitch.jpg
 
 
-## Testing Algorithm Step by Step
 
+## Testing Algorithm Step by Step
 
 ### Step 1. Read in the image
 We used image ```test_images/solidWhiteRight.jpg``` for testing purposes.
@@ -109,6 +109,7 @@ plt.imshow(lines_edges)
 ```
 
 ![alt text][image6]
+
 
 
 ## Applying the Solution to all Images
@@ -220,6 +221,7 @@ plt.imshow(image_with_lanes)
 ![alt text][image12]
 
 
+
 ## Testing on Videos
 The same process_image function was applied to each frame of the two provides videos. The results are in the ```test_video_output``` directory:
 
@@ -239,6 +241,7 @@ video_clip = clip.fl_image(process_image) #NOTE: this function expects color ima
 %time video_clip.write_videofile(video_output, audio=False)
 ```
 
+
 ## Shortcomings
 
 A few of the showtcomings are:
@@ -247,6 +250,7 @@ A few of the showtcomings are:
 * We are asumming in the region of interest that the camera stays in the same place and that lanes are flat. That is not the case in the real world.
 * In roads where there are signs with words, such as "just left", the algorithm might struggle.
 * If high congestion traffic the algorithm might have problems to see the lanes in fron the car.
+
 
 
 ## Suggested Improvements
