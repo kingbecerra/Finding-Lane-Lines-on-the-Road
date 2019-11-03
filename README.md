@@ -7,11 +7,16 @@ The project was divided in three main sections:
 * Running the algorithm in all images
 * Applying the algorithm to the videos
 
-My main pipeline consisted of six steps:
+My main pipeline consisted of six steps which are demostrated in the section "Testing Algorithm Step by Step". The algorithm can be executed in five steps by combining step 1 and 2 but I prefered to do it independently for illustrative purposes:
 
 ### Step 1. Read in the image
 
-Content of step 1
+We used image ```test_images/solidWhiteRight.jpg``` for testing purposes.
+
+```
+image = mpimg.imread('test_images/solidWhiteRight.jpg')
+plt.imshow(image)
+```
 
 ### Step 2. Grayscale the image
 
