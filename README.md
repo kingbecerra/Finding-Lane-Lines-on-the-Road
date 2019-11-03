@@ -239,7 +239,7 @@ video_clip = clip.fl_image(process_image) #NOTE: this function expects color ima
 %time video_clip.write_videofile(video_output, audio=False)
 ```
 
-### Shortcomings
+## Shortcomings
 
 A few of the showtcomings are:
 
@@ -249,7 +249,7 @@ A few of the showtcomings are:
 * If high congestion traffic the algorithm might have problems to see the lanes in fron the car.
 
 
-### Suggested Improvements
+## Suggested Improvements
 
 * Used a higher degree shape that can work in curves (non-linear)
 * Lines aren't really smooth in the video. A suggestion migh be to use the results from previous frames to smoother the output.
