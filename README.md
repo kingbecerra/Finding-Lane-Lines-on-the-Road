@@ -16,6 +16,13 @@ My main pipeline consisted of six steps which are demostrated in the section "Te
 [image5]: ./test_algorithm/hough_transform.png
 [image6]: ./test_algorithm/original_with_lanes.png
 
+[image7]: ./test_images_output/solidYellowLeft.jpg
+[image8]: ./test_images_output/solidYellowCurve.jpg
+[image9]: ./test_images_output/solidWhiteRight.jpg
+[image10]: ./test_images_output/solidYellowCurve2.jpg
+[image11]: ./test_images_output/solidWhiteCurve.jpg
+[image12]: ./test_images_output/whiteCarLaneSwitch.jpg
+
 
 ## Testing Algorithm Step by Step
 
@@ -103,15 +110,115 @@ plt.imshow(lines_edges)
 
 ![alt text][image6]
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
-
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-![alt text][image1]
 
 ## Applying the Solution to all Images
+
+Two functions were created to facilitate the process of applying the algorithm to all images. These functions includes all the calls to the needed helper functions and automate the process:
+
+```
+def process_image(image):
+    # NOTE: The output you return should be a color image (3 channel) for processing video below
+    # TODO: put your pipeline here,
+    # you should return the final output (image where lines are drawn on lanes)
+    
+    # Grayscale the image
+    gray = grayscale(image)
+    # plt.imshow(gray, cmap='gray')
+    
+    # Gaussian smoothing with a defined kernel size
+    kernel_size = 5
+    blur_gray = gaussian_blur(gray, kernel_size)
+
+    # Canny Edge Detection Alghorithm
+    low_threshold = 50
+    high_threshold = 150
+    edges = canny(blur_gray, low_threshold,high_threshold)
+    # plt.imshow(edges, cmap='Greys_r')
+    
+    # Find vertices
+    imshape = image.shape
+    vertices = np.array([[(0,imshape[0]),(450, 320), (490, 320), (imshape[1],imshape[0])]], dtype=np.int32)
+    masked_edges = region_of_interest(edges, vertices)
+        
+    # Hough transform
+    """
+    rho = distance resolution in pixels of the Hough grid
+    theta = angular resolution in radians of the Hough grid
+    threshold = minimum number of votes (intersections in Hough grid cell)
+    min_line_len = minimum number of pixels making up a line
+    max_line_gap = maximum gap in pixels between connectable line segments
+    """
+    rho = 2 
+    theta = np.pi/180 
+    threshold = 30    
+    min_line_len = 15 
+    max_line_gap = 20 
+    line_image = hough_lines(masked_edges, rho, theta, threshold, min_line_len, max_line_gap)
+    result = weighted_img(line_image, image, 0.6)
+    
+    return result
+
+def process_and_save_image(image_name):
+    image = mpimg.imread('test_images/' + image_name)
+    image_with_lanes = process_image(image)
+    mpimg.imsave('test_images_output/' + image_name, image_with_lanes)
+    
+    return image_with_lanes
+```
+
+### Image 1 - solidYellowLeft.jpg
+```
+image_with_lanes = process_and_save_image('solidYellowLeft.jpg')
+plt.imshow(image_with_lanes)
+```
+
+![alt text][image7]
+
+
+### Image 2 - solidYellowCurve.jpg
+```
+image_with_lanes = process_and_save_image('solidYellowCurve.jpg')
+plt.imshow(image_with_lanes)
+```
+
+![alt text][image8]
+
+
+### Image 3 - solidWhiteRight.jpg
+```
+image_with_lanes = process_and_save_image('solidWhiteRight.jpg')
+plt.imshow(image_with_lanes)
+```
+
+![alt text][image9]
+
+
+### Image 4 - solidYellowCurve2.jpg
+```
+image_with_lanes = process_and_save_image('solidYellowCurve2.jpg')
+plt.imshow(image_with_lanes)
+```
+
+![alt text][image10]
+
+
+### Image 5 - solidWhiteCurve.jpg
+```
+image_with_lanes = process_and_save_image('solidWhiteCurve.jpg')
+plt.imshow(image_with_lanes)
+```
+
+![alt text][image11]
+
+
+### Image 6 -whiteCarLaneSwitch.jpg
+```
+image_with_lanes = process_and_save_image('whiteCarLaneSwitch.jpg')
+plt.imshow(image_with_lanes)
+```
+
+![alt text][image12]
+
 
 ## Writeup Template
 
