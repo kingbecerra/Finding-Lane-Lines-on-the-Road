@@ -1,7 +1,5 @@
 # Finding-Lane-Lines-on-the-Road
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
-
 The project was divided in three main sections:
 * Testing the solution/algorithm using one image
 * Running the algorithm in all images
@@ -19,7 +17,7 @@ My main pipeline consisted of six steps which are demostrated in the section "Te
 [image6]: ./test_algorithm/original_with_lanes.png
 
 ---
-## Testing the ALgorithm
+## Testing the Algorithm
 
 ---
 ### Step 1. Read in the image
