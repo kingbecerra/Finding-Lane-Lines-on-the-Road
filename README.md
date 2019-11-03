@@ -63,7 +63,6 @@ imshape = image.shape
 vertices = np.array([[(0,imshape[0]),(450, 320), (490, 320), (imshape[1],imshape[0])]], dtype=np.int32)
 masked_edges = region_of_interest(edges, vertices)
 plt.imshow(masked_edges, cmap='Greys_r')
-
 ```
 
 ![alt text][image4]
@@ -88,7 +87,6 @@ color_edges = np.dstack((edges, edges, edges))
 # Draw the lines on the edge image
 lines_edges = cv2.addWeighted(color_edges, 0.8, line_image, 1, 0) 
 plt.imshow(lines_edges)
-
 ```
 
 ![alt text][image5]
@@ -99,7 +97,6 @@ The lanes lines are sumperimposed over the original image.
 ```
 lines_edges = weighted_img(line_image, image, 0.6)
 plt.imshow(lines_edges)
-
 ```
 
 ![alt text][image6]
