@@ -9,7 +9,7 @@ The project was divided in three main sections:
 
 My main pipeline consisted of six steps:
 
-## Step 1. Read in the image
+### Step 1. Read in the image
 
 Content of step 1
 
