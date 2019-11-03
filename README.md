@@ -14,7 +14,6 @@ My main pipeline consisted of six steps which are demostrated in the section "Te
 [image1]: ./test_images/solidWhiteRight.jpg
 
 ### Step 1. Read in the image
-
 We used image ```test_images/solidWhiteRight.jpg``` for testing purposes.
 
 ```
@@ -25,14 +24,46 @@ plt.imshow(image)
 ![alt text][image1]
 
 ### Step 2. Grayscale the image
+Convert the image to grayscale before applying a Gaussian blut and Cannt Edge Detection
+
+```
+gray = grayscale(image)
+plt.imshow(gray, cmap='gray')
+```
+
+![alt text][image2]
 
 ### Step 3. Gaussian Smoothing and Canny Edge Detection
 
+```
+
+```
+
+![alt text][image3]
+
 ### Step 4. Find Vertices
+
+```
+
+```
+
+![alt text][image4]
 
 ### Step 5. Hough Transform
 
+```
+
+```
+
+![alt text][image5]
+
 ### Step. 6 Original image with lane lines
+
+```
+
+```
+
+![alt text][image6]
 
 My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
 
