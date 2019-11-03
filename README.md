@@ -12,6 +12,11 @@ My main pipeline consisted of six steps which are demostrated in the section "Te
 [//]: # (Image References)
 
 [image1]: ./test_images/solidWhiteRight.jpg
+[image2]: ./test_algorithm/grayscale_image.png
+[image3]: ./test_algorithm/gaussian_and_canny.png
+[image4]: ./test_algorithm/vertices.png
+[image5]: ./test_algorithm/hough_transform.png
+[image6]: ./test_algorithm/original_with_lanes.png
 
 ### Step 1. Read in the image
 We used image ```test_images/solidWhiteRight.jpg``` for testing purposes.
