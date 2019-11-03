@@ -220,6 +220,27 @@ plt.imshow(image_with_lanes)
 ![alt text][image12]
 
 
+## Testing on Videos
+The same process_image function was applied to each frame of the two provides videos. The results are in the ```test_video_output``` directory:
+
+### Video 1 - solidWhiteRight.mp4
+```
+video_output = 'test_videos_output/solid_white_right.mp4'
+clip = VideoFileClip("test_videos/solidWhiteRight.mp4")
+video_clip = clip.fl_image(process_image) #NOTE: this function expects color images!!
+%time video_clip.write_videofile(video_output, audio=False)
+```
+
+### Video 2 - solidYellowLeft.mp4
+```
+video_output = 'test_videos_output/solid_yellow_left.mp4'
+clip = VideoFileClip("test_videos/solidYellowLeft.mp4")
+video_clip = clip.fl_image(process_image) #NOTE: this function expects color images!!
+%time video_clip.write_videofile(video_output, audio=False)
+```
+
+
+
 ## Writeup Template
 
 ### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
