@@ -239,7 +239,7 @@ video_clip = clip.fl_image(process_image) #NOTE: this function expects color ima
 %time video_clip.write_videofile(video_output, audio=False)
 ```
 
-
+# AQUI ME QUEDE
 
 ## Writeup Template
 
