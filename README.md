@@ -77,7 +77,7 @@ plt.imshow(masked_edges, cmap='Greys_r')
 ![alt text][image4]
 
 ### Step 5. Hough Transform
-To draw_lines function in the helper functions was modified to find the left and right lines. Basically for each line the slope was found, and based on the value of the slope they are categorized as left or right line. Lines with small slopes (almost horizontal) aren't taken in consideration. A first degree polynomial is found using the points of the left and right lanes, and then superimposed on the region of interest to be properly displayed on the image.
+To ```draw_lines``` function in the helper functions was modified to find the left and right lines. Basically for each line the slope was found, and based on the value of the slope they are categorized as left or right line. Lines with small slopes (almost horizontal) aren't taken in consideration. A first degree polynomial is found using the points of the left and right lanes, and then superimposed on the region of interest to be properly displayed on the image.
 
 ```
 # Hough transform parameters
